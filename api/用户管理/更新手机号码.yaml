@@ -1,0 +1,36 @@
+name: 更新手机号码
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        avatar: $avatar
+        hospitalId: $hospitalId
+        isEmployee: $isEmployee
+        isRoot: $isRoot
+        isTemporary: $isTemporary
+        name: $name
+        nickname: $nickname
+        password: $password
+        phone: $phone
+        region: $region
+        resume: $resume
+        roleInfoIds:
+        - $roleInfoIds
+        roleName:
+        - $roleName
+        roles:
+        -   applicationInfoId: $applicationInfoId
+            description: $description
+            hospitalId: $hospitalId
+            id: $id
+            roleAlias: $roleAlias
+            roleName: $roleName
+        userId: $userId
+        username: $username
+    method: POST
+    url: /user/updatePhone
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

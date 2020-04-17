@@ -1,0 +1,11 @@
+name: 获取所有公司员工
+request:
+    headers: {}
+    method: GET
+    params: {}
+    url: /user/listEmployee
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

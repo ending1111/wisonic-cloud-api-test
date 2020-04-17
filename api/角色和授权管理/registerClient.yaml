@@ -1,0 +1,18 @@
+name: registerClient
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        clientId: $clientId
+        clientName: $clientName
+        clientSecret: $clientSecret
+        id: $id
+        scopeInfoIds:
+        - $scopeInfoIds
+    method: POST
+    url: /authorization/client/register
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

@@ -1,0 +1,14 @@
+name: 删除角色下的某个用户
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        roleInfoId: $roleInfoId
+        userId: $userId
+    method: POST
+    url: /authorization/deleteRoleUser
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

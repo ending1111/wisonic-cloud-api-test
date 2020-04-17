@@ -1,0 +1,16 @@
+name: 同步权限
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        scopes:
+        -   scopeAlias: $scopeAlias
+            scopeName: $scopeName
+        serviceInfoId: $serviceInfoId
+    method: POST
+    url: /authorization/client/synchronizeScope
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

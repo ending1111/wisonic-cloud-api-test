@@ -1,0 +1,13 @@
+name: 获取某医院下的所有用户
+request:
+    headers: {}
+    method: GET
+    params:
+        hospitalId: $hospitalId
+    url: /user/getUserByHospital
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   hospitalId: $hospitalId

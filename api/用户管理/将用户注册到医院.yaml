@@ -1,0 +1,15 @@
+name: 将用户注册到医院
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        hospitalId: $hospitalId
+        isPrimary: $isPrimary
+        userId: $userId
+    method: POST
+    url: /user/setHospital
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

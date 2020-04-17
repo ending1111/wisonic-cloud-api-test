@@ -1,0 +1,16 @@
+name: 更新角色信息
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        description: $description
+        id: $id
+        roleAlias: $roleAlias
+        roleName: $roleName
+    method: POST
+    url: /authorization/updateRole
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

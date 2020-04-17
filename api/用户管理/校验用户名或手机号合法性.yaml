@@ -1,0 +1,14 @@
+name: 校验用户名或手机号合法性
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        userId: $userId
+        username: $username
+    method: POST
+    url: /user/preCheck
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

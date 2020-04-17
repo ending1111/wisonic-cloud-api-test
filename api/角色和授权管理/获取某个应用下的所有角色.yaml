@@ -1,0 +1,13 @@
+name: 获取某个应用下的所有角色
+request:
+    headers: {}
+    method: GET
+    params:
+        appId: $appId
+    url: /authorization/getRole
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   appId: $appId

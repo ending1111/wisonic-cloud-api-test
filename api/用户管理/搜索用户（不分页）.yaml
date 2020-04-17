@@ -1,0 +1,13 @@
+name: 搜索用户（不分页）
+request:
+    headers: {}
+    method: GET
+    params:
+        keywords: $keywords
+    url: /user/searchFilterUser
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   keywords: $keywords

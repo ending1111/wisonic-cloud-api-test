@@ -1,0 +1,14 @@
+name: 免密登录
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        hospitalId: $hospitalId
+        principal: $principal
+    method: POST
+    url: /auth/token/withoutCredentials
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

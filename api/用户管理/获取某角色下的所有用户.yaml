@@ -1,0 +1,13 @@
+name: 获取某角色下的所有用户
+request:
+    headers: {}
+    method: GET
+    params:
+        roleInfoId: $roleInfoId
+    url: /user/getUserByRole
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   roleInfoId: $roleInfoId

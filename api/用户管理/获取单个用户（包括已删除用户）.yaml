@@ -1,0 +1,13 @@
+name: 获取单个用户（包括已删除用户）
+request:
+    headers: {}
+    method: GET
+    params:
+        userId: $userId
+    url: /user/getUserWithoutIsDeleted
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   userId: $userId

@@ -1,0 +1,11 @@
+name: 检查服务是否正常运行
+request:
+    headers: {}
+    method: GET
+    params: {}
+    url: /healthCheck/check
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []

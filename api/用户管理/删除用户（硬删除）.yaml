@@ -1,0 +1,13 @@
+name: 删除用户（硬删除）
+request:
+    headers: {}
+    method: GET
+    params:
+        userId: $userId
+    url: /user/hardDelete
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   userId: $userId

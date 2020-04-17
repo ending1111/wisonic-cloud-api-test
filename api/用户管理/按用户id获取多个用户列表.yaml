@@ -1,0 +1,13 @@
+name: 按用户id获取多个用户列表
+request:
+    headers: {}
+    method: GET
+    params:
+        userId: $userId
+    url: /user/batchGetUser
+validate:
+-   eq:
+    - status_code
+    - 200
+variables:
+-   userId: $userId

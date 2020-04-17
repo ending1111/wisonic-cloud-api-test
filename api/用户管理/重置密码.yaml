@@ -1,0 +1,14 @@
+name: 重置密码
+request:
+    headers:
+        Content-Type: application/json
+    json:
+        password: $password
+        userId: $userId
+    method: POST
+    url: /user/resetPassword
+validate:
+-   eq:
+    - status_code
+    - 200
+variables: []
