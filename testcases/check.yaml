@@ -1,0 +1,11 @@
+- config:
+    name: login
+    base_url: ${ENV(base_url)}
+    output:
+    - session_token
+
+- test:
+    name: 登录
+    api: api/健康检查/检查服务是否正常运行.yaml
+    validate:
+    - eq: [status_code, 200]

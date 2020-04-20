@@ -1,0 +1,18 @@
+- config:
+    name: login
+    base_url: ${ENV(base_url)}
+    output:
+    - session_token
+
+- test:
+    name: 登录
+    api: api/登录功能/用户登录.yaml
+    variables:
+      principal: "13111111111"
+      credentials: "123456"
+      hospitalId: 0
+    extract:
+      - session_token: content.access_token
+    validate:
+    - eq: [status_code, 200]
+    - len_eq: [content.access_token, 42]
