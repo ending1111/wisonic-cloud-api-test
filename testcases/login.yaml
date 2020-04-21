@@ -8,7 +8,7 @@
     name: 登录
     api: api/登录功能/用户登录.yaml
     variables:
-      principal: "13111111111"
+      principal: "cloudpacs"
       credentials: "123456"
       hospitalId: 0
     extract:
