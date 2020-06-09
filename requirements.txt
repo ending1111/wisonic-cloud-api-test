@@ -1,1 +1,1 @@
-httprunner==3.0.11
+httprunner==2.5.7
