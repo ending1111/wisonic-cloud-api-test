@@ -1,0 +1,22 @@
+name: 上传sim卡基站信息
+
+request:
+    headers:
+        Content-Type: application/x-www-form-urlencoded
+    data:
+        MachineID: 74FE4834FA9F
+        v: 1.0
+        command: 316
+        sequenceId: 3
+        sv: 59eda54b1e8e6a37f4fecfb1a56beb91
+        MCC: $MCC
+        MNC: $MNC
+        CELLID: $CELLID
+        LAC: $LAC
+    method: POST
+    url: /ws/maintain/cellInfo
+
+validate:
+    - eq: [status_code, 200]
+    - eq: [headers.Content-Type, text/html;charset=UTF-8]
+    - eq: [content.responseHeader.errorInfo, Success]

@@ -1,0 +1,9 @@
+- config:
+    name: 获取云预置参数
+    base_url: ${ENV(base_url)}
+
+- test:
+    name: 获取wing参数
+    api: api/设备API/获取云预置参数.yaml
+    validate:
+    - len_eq: [content.response.wing, 21]

@@ -1,0 +1,20 @@
+name: 上传sim卡信息和网络状态
+
+request:
+    headers:
+        Content-Type: application/x-www-form-urlencoded
+    data:
+        MachineID: 74FE4834FA9F
+        v: 1.0
+        command: 315
+        sequenceId: 2
+        sv: 3bd74cc219ab1222e71146203646e557
+        ICCID: 89860618000033278396
+        networkType: $networkType
+    method: POST
+    url: /ws/maintain/uploadSimICCIDAndNetworkType
+
+validate:
+    - eq: [status_code, 200]
+    - eq: [headers.Content-Type, text/html;charset=UTF-8]
+    - eq: [content.responseHeader.errorInfo, Success]
