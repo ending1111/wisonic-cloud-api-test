@@ -6,7 +6,7 @@
     name: 登录国内账号
     api: api/设备API/账号登录.yaml
     variables:
-        userName: 13437897110
+        userName: 13333333333
         password: 123456
 
 - test:
