@@ -1,0 +1,20 @@
+name: 账号登录
+
+request:
+    headers:
+        Content-Type: application/x-www-form-urlencoded
+    data:
+        MachineID: 74FE4834FA9F
+        v: 1.0
+        command: 312
+        sequenceId: 12
+        sv: 8a668765cb722ee6a1a85c45799c152e
+        userName: $userName
+        password: $password
+    method: POST
+    url: /ws/doctor/deviceLoginConfirmation
+
+validate:
+    - eq: [status_code, 200]
+    - eq: [headers.Content-Type, text/html;charset=UTF-8]
+    - eq: [content.responseHeader.errorInfo, Success]

@@ -1,0 +1,36 @@
+- config:
+    name: 设备账号登录
+    base_url: ${ENV(base_url)}
+
+- test:
+    name: 登录国内账号
+    api: api/设备API/账号登录.yaml
+    variables:
+        userName: 13437897110
+        password: 123456
+
+- test:
+    name: 登录国际（法国）账号
+    api: api/设备API/账号登录.yaml
+    variables:
+        userName: 644639583
+        password: 123456
+
+- test:
+    name: 账号不存在
+    api: api/设备API/账号登录.yaml
+    variables:
+        userName: 644639584
+        password: 123456
+        validate:
+    validate:
+      - eq: [content.responseHeader.errorInfo, the doctor user is not exist]
+
+- test:
+    name: 密码错误
+    api: api/设备API/账号登录.yaml
+    variables:
+        userName: 644639583
+        password: 111111
+    validate:
+      - eq: [content.responseHeader.errorInfo, Input password is wrong]
