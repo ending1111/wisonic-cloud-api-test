@@ -1,0 +1,7 @@
+- config:
+    name: 获取wicommand参数
+    base_url: ${ENV(base_url)}
+
+- test:
+    name: 修改探头预置命令
+    api: api/设备API/查询wicommand命令.yaml

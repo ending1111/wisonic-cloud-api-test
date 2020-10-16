@@ -1,0 +1,35 @@
+name: 上传sim卡信息和网络状态
+
+request:
+    headers:
+        Content-Type: application/x-www-form-urlencoded
+    data:
+        MachineID: D05099147E90
+        v: 1.0
+        command: 326
+        sequenceId: 1
+        sv: 371293f50f0192eccc051f13c22cdc8b
+    method: POST
+    url: /ws/wicommand/query
+
+validate:
+    - eq: [status_code, 200]
+    - eq: [headers.Content-Type, text/html;charset=UTF-8]
+    - eq: [content.responseHeader.errorInfo, Success]
+    - json_schema: [content, {
+        "type": "object",
+        "required": ["responseHeader"],
+        "properties": {
+            "responseHeader": {
+                "id": "#/properties/responseHeader",
+                "type": "object",
+                "required": ["status","sequenceId","command","errorInfo"],
+                "properties": {
+                    "status": { "type": "string" },
+                    "sequenceId": { "type": "integer" },
+                    "command": { "type": "string" },
+                    "errorInfo": { "type": "string" }
+                }
+            }
+        }
+    }]
