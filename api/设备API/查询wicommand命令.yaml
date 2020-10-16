@@ -27,7 +27,7 @@ validate:
                 "properties": {
                     "status": { "type": "string" },
                     "sequenceId": { "type": "integer" },
-                    "command": { "type": "string" },
+                    "command": { "type": "integer" },
                     "errorInfo": { "type": "string" }
                 }
             }
