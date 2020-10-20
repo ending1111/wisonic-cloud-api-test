@@ -17,18 +17,61 @@ validate:
     - eq: [headers.Content-Type, text/html;charset=UTF-8]
     - eq: [content.responseHeader.errorInfo, Success]
     - json_schema: [content, {
-        "type": "object",
-        "required": ["responseHeader"],
-        "properties": {
-            "responseHeader": {
-                "id": "#/properties/responseHeader",
-                "type": "object",
-                "required": ["status","sequenceId","command","errorInfo"],
-                "properties": {
-                    "status": { "type": "string" },
-                    "sequenceId": { "type": "integer" },
+        "type" : "object",
+        "required" : ["responseHeader","response"],
+        "properties" : {
+            "responseHeader" : {
+                "id" : "#/properties/responseHeader",
+                "type" : "object",
+                "required" : ["status","sequenceId","command","errorInfo"],
+                "properties" : {
+                    "status" : { "type" : "string" },
+                    "sequenceId": { "type" : "integer" },
                     "command": { "type": "integer" },
                     "errorInfo": { "type": "string" }
+                },
+                "additionalProperties": false
+            },
+            "response" : {
+                "type" : "object",
+                "required" : ["wiCommand"],
+                "properties" : {
+                    "wiCommand" : { "$$ref" : "#/definitions/modify_preset" }
+                }   
+            }
+        },      
+        "definitions" : {
+            "modify_preset" : {
+                "type" : "array",
+                "items" : {
+                    "type" : "object",
+                    "required" : ["payload","v","action","id"],
+                    "properties" : {
+                        "v" : { "type": "integer" },
+                        "action" : { "type": "string" },
+                        "id" : { "type": "integer" },
+                        "payload" : {
+                            "type" : "array",
+                            "items" : {
+                                "type" : "object",
+                                "required" : ["presets","v"],
+                                "properties" : {
+                                    "v" : { "type" : "integer" },
+                                    "presets" : {
+                                        "type" : "array",
+                                        "items" : {
+                                            "type" : "object",
+                                            "required" : ["val","key"],
+                                            "properties" : {
+                                            "val" : { "type" : "string" },
+                                            "key" : { "type" : "string" }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
