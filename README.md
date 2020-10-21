@@ -16,7 +16,7 @@ project
 
 ## 编写测试用例
    todo
-   
+
 ## 执行测试用例
    安装依赖
    ```shell script
@@ -29,13 +29,9 @@ project
 
 ## 自定义校验器
    编写完自定义的校验器后，如果校验器引入了其他依赖，需更新```requirements.txt```
-   如果是venv环境，运行命令
-   ```shell script
-   pip freeze > requirements.txt
-   ```
 
 ## Jenkins集成
-    todo
+todo
 
 ## 从Yapi导入api接口数据
 1.  打开[Yapi](http://192.168.1.207:3000/) 进入项目列表，选择项目，点击数据管理。在数据导出中以json格式导出全部接口
@@ -48,4 +44,4 @@ project
 
 
 ## 参考
-1. [Httprunner](https://docs.httprunner.org/)
+1. 目前项目使用的版本是2.5.7，请参考V2版本说明：[HttprunnerDoc_V2.x](https://v2.httprunner.org/)
