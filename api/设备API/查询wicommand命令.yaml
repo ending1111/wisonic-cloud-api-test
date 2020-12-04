@@ -1,4 +1,4 @@
-name: 上传sim卡信息和网络状态
+name: 查询wisommand命令
 
 request:
     headers:
