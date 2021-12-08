@@ -1,2 +1,0 @@
-httprunner==2.5.7
-jsonschema==3.2.0
