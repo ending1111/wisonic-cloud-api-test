@@ -19,7 +19,8 @@ class AutoRunner(object):
         """
         # 获取当前时间，这样便于下面的使用。
         now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
-        path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        #path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        path =os.path.dirname(os.path.dirname(__file__))
         cases_path = path + '/cases'
         print(cases_path)
         html_path = path + '/reports/' + now + '_report.html'

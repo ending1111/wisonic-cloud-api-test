@@ -12,9 +12,9 @@ class SendEmail(object):
 
     def new_report(self):
         # # 测试报告路径
-        report_file = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/reports'
+        report_file = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + '/reports/'
         lists = os.listdir(report_file)  # 列出目录的下所有文件和文件夹保存到lists
-        lists.sort(key=lambda fn: os.path.getmtime(report_file + "\\" + fn))  # 按时间排序
+        lists.sort(key=lambda fn: os.path.getmtime(report_file + "/" + fn))  # 按时间排序
         file_new = os.path.join(report_file, lists[-1])  # 获取最新的文件保存到file_new
         print(file_new)
         return file_new
