@@ -47,7 +47,7 @@ class OperateTxtFile(object):
         if data == "":
             print("没有找到关键字匹配数据")
         f.close()
-        return data
+        return data.encode('utf-8').decode('utf-8')
 
     def read_row_keyword(self,file,keyword):
         """
