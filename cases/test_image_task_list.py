@@ -112,7 +112,7 @@ class TestImageTaskList(object):
         :return:
         """
         result = self.page.image_task_list(pageNumber=pageNumber, pageSize=pageSize, months=months)
-        assert result["status"] == 3000
+        assert result["status"] == 3002
         self.log.info(result)
 
 
