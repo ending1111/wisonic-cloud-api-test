@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # True为执行main时发送测试报告邮件  False为执行main时不发送测试报告邮件

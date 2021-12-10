@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -56,8 +56,8 @@ class OperateTxtFile(object):
         :param keyword:
         :return:
         """
-        file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\datas\%s" % file
-        #print(file_path)
+        file_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "/datas/%s" % file
+        print(file_path)
         line = self.read_row(file_path, keyword)
         #print(line)
         return line
