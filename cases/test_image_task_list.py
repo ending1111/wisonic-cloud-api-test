@@ -4,16 +4,15 @@
 import pytest
 from pages.image_quality_page import ImageQualityPage
 from common.logs import Log
-from common.main_base import pro_env
-
+from config import skip_flag
 
 class TestImageTaskList(object):
     """图像质检任务列表接口测试：/api/uniqc/image-qc/task-list"""
-
-    def setup_class(self):
-        self.log = Log()
-        self.page = ImageQualityPage()
-
+    @classmethod
+    def setup_class(cls):
+        cls.log = Log()
+        cls.page = ImageQualityPage()
+        cls.skip_flag = True
 
     # 参数正常场景测试
     case1 = [
@@ -57,7 +56,7 @@ class TestImageTaskList(object):
         (0, 10, "2021-11")
     ]
 
-    @pytest.mark.skipif(condition=pro_env,reason="跳过该测试用例")
+    @pytest.mark.skipif(skip_flag=skip_flag,reason="跳过该测试用例")
     @pytest.mark.parametrize('pageNumber,pageSize,months', case3)
     def test_image_task_list_03(self, pageNumber, pageSize, months):
         """

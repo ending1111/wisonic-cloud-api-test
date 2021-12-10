@@ -6,7 +6,7 @@
 project
 cases       #测试用例
 common      #封装的公共方法
-datas       #测试数据
+config      #数据配置
 pages       #封装的页面操作方法
 logs        #运行测试用例后生成的日志
 reports     #运行测试用例后生成的测试报告
