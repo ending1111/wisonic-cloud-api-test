@@ -20,7 +20,8 @@ class AutoRunner(object):
         path =os.path.dirname(os.path.dirname(__file__))
         cases_path = path + '/cases'
         print(cases_path)
-        html_path = path + '/reports/' + now + '_report.html'
+        #html_path = path + '/reports/' + now + '_report.html'
+        html_path = path + '/reports/' + 'report.html'
         print(html_path)
         pytest.main([cases_path, '--html={}'.format(html_path), '--self-contained-html'])
 
