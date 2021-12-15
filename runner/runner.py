@@ -6,6 +6,7 @@ import os
 import time
 from common.send_email import SendEmail
 import configparser
+from config.test_flag import send_email_flag
 
 
 class AutoRunner(object):
@@ -30,14 +31,14 @@ class AutoRunner(object):
         发送邮件
         :return:
         """
-        root_dir = os.path.dirname(os.path.dirname(__file__))
-        print(root_dir)
-        file = root_dir + '/config/' + 'param_config.ini'
-        print(file)
-        config = configparser.ConfigParser()
-        config.read(file, encoding='UTF-8')
-        # 测试地址
-        send_email_flag = config.get("email_flag", "send_email_flag")
+        # root_dir = os.path.dirname(os.path.dirname(__file__))
+        # print(root_dir)
+        # file = root_dir + '/config/' + 'param_config.ini'
+        # print(file)
+        # config = configparser.ConfigParser()
+        # config.read(file, encoding='UTF-8')
+        # # 测试地址
+        # send_email_flag = config.get("email_flag", "send_email_flag")
         if send_email_flag:
             root_dir = os.path.dirname(os.path.dirname(__file__))
             #print(root_dir)
